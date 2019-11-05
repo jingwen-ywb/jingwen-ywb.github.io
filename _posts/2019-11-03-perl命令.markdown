@@ -3,19 +3,3 @@
 ```perl
     #!/usr/bin/envperl
 ```
-## use和require
-我们经常开发Perl脚本代码的时候，文件最顶部经常会发现use xxx或者 require "xxx.pm"，这表示该文件需要加载和引用Perl的xxx module
-use语句则是告诉Perl在@INC路径寻找xxx.pm并包含到解析的源文件拷贝中。use语句是使用类必须的。
-use和require的区别 
-![use和require的区别](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-05%20%E4%B8%8B%E5%8D%887.13.43.png?Expires=1572956119&OSSAccessKeyId=TMP.hfwF34cENDEdXAAqyDuLKUdGSu1JBYufWATDzd5HwEQoNj2oPVnj7i5dtczYyAja6Vo5LGtaaR3pCwrRvLwjj2JRsxBsF6i4mVxdYgkPD5yU4P2r1mE7gJSDagNi7y.tmp&Signature=OkDAgj80jFXr%2Byq5YPQcIY7ePrQ%3D "use和require的区别")
-## use strict
-程序员编写代码，运行时候排查错误是是很常见的事情，尤其是写Perl这样的脚本语言，在文件的开头加上
-```python
-    use strict
-```
-strict这个关键字的作用是强迫程序开发者使用比较严谨的Perl写法，避开一些比较容易出错的编写方式，让代码在运行出错的时候，更高效的去排查问题。脚本中加上了strict之后，在整个代码中就会有很多的限制就是在定义任何的变量之前一定需要加上关键字**my**。尤其是当你的程序会有很多行的时候
-## use warnings
-warnings就意味着Perl程序开启了所有的警告信息，让程序员更容易发觉代码可能会出问题的地方。一般都是跟着strict一起使用
-```python
-    use warnings
-```
