@@ -1,0 +1,43 @@
+---
+layout:     post
+title:      "Perl标量数据"
+subtitle:   " Perl标量数据介绍""
+date:       2019-11-05 21:00:00
+author:     "jingwen"
+catalog: true
+tags:
+    - Perl
+    - programming
+---
+
+##  标量
+标量是Perl里面最简单的一种数据类型，对大部分的标量来说，它要么是数据比如(100或是3.75e20)，要么是由字符串组成的序列。对于Perl来说，字符串和数据在大多数情况下是可以内部转换的，你可以用操作符对标量进行操作，产生的结果通常也是一个标量。标量可以存储在标量的变量里面。
+* 数字
+    * 整数直接量
+        * 0,2001,-40，61323228440128223 这些都是整数，但是你会发现Perl有一个很牛逼的地方就是可以用下划线61_323_228_440_128_223和61323228440128223表示同一个数字，只是写法不同。
+    * 浮点数直接量
+        * 小数点与前置的正负号都是可选的，数据后面也可以加上用"e"表示的10的此房标识符(即指数表示法)。整数和浮点数在Perl中都是双精度类型来存储的
+    * 非十进制整数直接量
+        * Perl也允许使用十进制(decimal)以外的其他进制来表示数字。八进制(octal)直接量是以0开头，十六进制(hexadecimal)直接量以0x开头，而二进制(binary)直接量以0b开头。0377表示八进制的377，等于十进制的255；oxff表示十六进制的FF(ff)，也等于十进制的255；0b1111111表示二进制的11111111，也等于十进制的255，虽然三个数据不相同，但是对于Perl而言都是同一个数据。
+* 数字操作符
+* 字符串
+    * 单引号字符串直接量
+    * 双引号字符串直接量
+* 字符串操作符
+* 数字与字符串之间的自动转换
+## 标量变量
+我们经常开发Perl脚本代码的时候，文件最顶部经常会发现use xxx或者 require "xxx.pm"，这表示该文件需要加载和引用Perl的xxx module
+use语句则是告诉Perl在@INC路径寻找xxx.pm并包含到解析的源文件拷贝中。use语句是使用类必须的。
+use和require的区别 
+![use和require的区别](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-05%20%E4%B8%8B%E5%8D%887.13.43.png?Expires=1572956119&OSSAccessKeyId=TMP.hfwF34cENDEdXAAqyDuLKUdGSu1JBYufWATDzd5HwEQoNj2oPVnj7i5dtczYyAja6Vo5LGtaaR3pCwrRvLwjj2JRsxBsF6i4mVxdYgkPD5yU4P2r1mE7gJSDagNi7y.tmp&Signature=OkDAgj80jFXr%2Byq5YPQcIY7ePrQ%3D "use和require的区别")
+## use strict
+程序员编写代码，运行时候排查错误是是很常见的事情，尤其是写Perl这样的脚本语言，在文件的开头加上
+```python
+    use strict
+```
+strict这个关键字的作用是强迫程序开发者使用比较严谨的Perl写法，避开一些比较容易出错的编写方式，让代码在运行出错的时候，更高效的去排查问题。脚本中加上了strict之后，在整个代码中就会有很多的限制就是在定义任何的变量之前一定需要加上关键字**my**。尤其是当你的程序会有很多行的时候
+## use warnings
+warnings就意味着Perl程序开启了所有的警告信息，让程序员更容易发觉代码可能会出问题的地方。一般都是跟着strict一起使用
+```python
+    use warnings
+```
