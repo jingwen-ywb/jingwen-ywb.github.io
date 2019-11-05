@@ -1,15 +1,3 @@
----
-layout:     post
-title:      "Perl命令"
-subtitle:   " Perl命令介绍""
-date:       2019-11-03 21:00:00
-author:     "jingwen"
-catalog: true
-tags:
-    - Perl
-    - programming
----
-
 ##  #!/usr/bin/perl
 在Unix系统中，如果文件开头的最前面是两个字符#!,那么后面跟着的就是用来执行这个文件的程序路径，在Perl的脚本中就是/usr/bin/perl，正式由于必须强调这样的命令，导致perl脚本程序可移植性变得比较差，因为存在每台机器上perl解释器的路径不一样。不过大多数机器下的perl解释器的路径一般在/usr/bin/perl或者/usr/local/bin/perl下。如果不确定的话就写成
 ```perl
