@@ -3,10 +3,10 @@
   <channel>
     <title>Jingwen Blog</title>
     <description>关于程序与设计、黑客与画家，Web &amp; Mobile Lover，Software Engineer，UX Designer | 这里是 景闻 的个人博客，与你一起发现更大的世界。</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 06 Nov 2019 11:08:28 +0800</pubDate>
-    <lastBuildDate>Wed, 06 Nov 2019 11:08:28 +0800</lastBuildDate>
+    <link>https://huangxuan.me/</link>
+    <atom:link href="https://huangxuan.me/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 06 Nov 2019 11:11:22 +0800</pubDate>
+    <lastBuildDate>Wed, 06 Nov 2019 11:11:22 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -48,8 +48,8 @@ Larry Wall(拉里·沃尔)，1954年9月27日出生在美国加州洛杉矶，�
 &lt;p&gt;Larry Wall早已不在亲自编写所有Perl的核心代码，但是他依然会指引开发方向和作为关键的领路人和决策者。当前主要是围绕Perl5的版本进行迭代，但是后来一些人发起了Perl6的开发，想要完全替代Perl5，但是由于进展一度比较慢，而Perl5却是不断的更新从，导致现在Perl5和Perl6的差别比较大，完全是独立的两个方向发展了。Larry Wall已经批准Perl6命名为Raku。&lt;/p&gt;
 </description>
         <pubDate>Fri, 18 Oct 2019 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/10/18/perl%E7%AE%80%E4%BB%8B/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/10/18/perl%E7%AE%80%E4%BB%8B/</guid>
+        <link>https://huangxuan.me/2019/10/18/perl%E7%AE%80%E4%BB%8B/</link>
+        <guid isPermaLink="true">https://huangxuan.me/2019/10/18/perl%E7%AE%80%E4%BB%8B/</guid>
         
         <category>Perl</category>
         
@@ -129,8 +129,8 @@ Larry Wall(拉里·沃尔)，1954年9月27日出生在美国加州洛杉矶，�
 
 </description>
         <pubDate>Thu, 29 Jan 2015 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2015/01/29/hello-2015/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/01/29/hello-2015/</guid>
+        <link>https://huangxuan.me/2015/01/29/hello-2015/</link>
+        <guid isPermaLink="true">https://huangxuan.me/2015/01/29/hello-2015/</guid>
         
         <category>生活</category>
         
