@@ -1,3 +1,15 @@
+---
+layout:     post
+title:      "PERL简介"
+subtitle:   " \"PERL简介\""
+date:       2019-10-18 12:00:00
+author:     "jingwen"
+catalog: true
+tags:
+    - Perl
+    - programming
+---
+
 ##  PERL简介
 PERL是Practical Extraction and Report Language的简写，即实用摘录与报表语言，由Larry Wall在1987年发明的一种编程语言，主要用来进行文本处理。对于Perl来说，最重要的就是正则表达式以及强大的第三方库CPAN了。
 ## PERL之父
