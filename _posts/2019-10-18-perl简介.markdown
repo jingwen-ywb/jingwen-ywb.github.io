@@ -4,6 +4,7 @@ title:      "PERL简介"
 subtitle:   " \"PERL简介\""
 date:       2019-10-18 12:00:00
 author:     "jingwen"
+header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - Perl

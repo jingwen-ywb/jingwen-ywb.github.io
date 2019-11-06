@@ -3,10 +3,10 @@
   <channel>
     <title>Jingwen Blog</title>
     <description>关于程序与设计、黑客与画家，Web &amp; Mobile Lover，Software Engineer，UX Designer | 这里是 景闻 的个人博客，与你一起发现更大的世界。</description>
-    <link>https://huangxuan.me/</link>
-    <atom:link href="https://huangxuan.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 06 Nov 2019 10:56:45 +0800</pubDate>
-    <lastBuildDate>Wed, 06 Nov 2019 10:56:45 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 06 Nov 2019 11:08:28 +0800</pubDate>
+    <lastBuildDate>Wed, 06 Nov 2019 11:08:28 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -14,7 +14,8 @@
         <description>&lt;h2 id=&quot;perl简介&quot;&gt;PERL简介&lt;/h2&gt;
 &lt;p&gt;PERL是Practical Extraction and Report Language的简写，即实用摘录与报表语言，由Larry Wall在1987年发明的一种编程语言，主要用来进行文本处理。对于Perl来说，最重要的就是正则表达式以及强大的第三方库CPAN了。&lt;/p&gt;
 &lt;h2 id=&quot;perl之父&quot;&gt;PERL之父&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://jingwen-blog.oss-cn-beijing.aliyuncs.com/Larry%20Wall.jpg?Expires=1572765995&amp;amp;OSSAccessKeyId=TMP.hg9vPu1T9PRjcBso3cdhYr9tBwyQahmnv99kYcT4bipakfy7r714sXRSK11nQmCZRDRFqTKM9wJdMpVPsw8yQfCAgd3LbiNZepmx8xXDjHzWjycS8cwVbNtRUN4hMT.tmp&amp;amp;Signature=QJYZHYftpuuuiX7PnMXW9mD79s4%3D&quot; alt=&quot;Larry Wall&quot; title=&quot;Larry Wall&quot; /&gt; Larry Wall(拉里·沃尔)，1954年9月27日出生在美国加州洛杉矶，是程序员，系统管理者，语言学家和作家，更是一个相当幽默的人。Larry认为好的程序员最重要的三个美德就是“懒惰，急躁，傲慢”。哈哈，也正是或许他真的太符合这个三个特点了，所以导致层级遇到一个棘手的问题，在当年用awk和shell都不能很好的解决，所以开创了Perl创作之路。“洋葱的状态”是 Larry Wall 的年度演讲的主题，洋葱也是 Perl 基金会的标志。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jingwen-blog.oss-cn-beijing.aliyuncs.com/Larry%20Wall.jpg?Expires=1573012719&amp;amp;OSSAccessKeyId=TMP.hfZFN8nGwTBFmfTWFTEB3CjVfZc4FtYyCPoxw1BR539Rh3qfTMiksi78LmZrpAr2wfvwcVHfS4SFbamyZ9zcNnS6Zz5t45gLLZ1GDEp4NGmiA6cuxtWfgEMUtx8m9U.tmp&amp;amp;Signature=nqXn%2FPnldzQmVIouUEqwdXF0%2FPM%3D&quot; alt=&quot;Larry Wall&quot; title=&quot;Larry Wall&quot; /&gt; 
+Larry Wall(拉里·沃尔)，1954年9月27日出生在美国加州洛杉矶，是程序员，系统管理者，语言学家和作家，更是一个相当幽默的人。Larry认为好的程序员最重要的三个美德就是“懒惰，急躁，傲慢”。哈哈，也正是或许他真的太符合这个三个特点了，所以导致层级遇到一个棘手的问题，在当年用awk和shell都不能很好的解决，所以开创了Perl创作之路。“洋葱的状态”是 Larry Wall 的年度演讲的主题，洋葱也是 Perl 基金会的标志。&lt;/p&gt;
 &lt;h2 id=&quot;perl解释器&quot;&gt;perl解释器&lt;/h2&gt;
 &lt;p&gt;Perl是一种解释的脚本语言，相比于Perl的p是小写的perl则是Perl程序的解释器。基于mac系统在命令行直接用命令&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
@@ -47,8 +48,8 @@
 &lt;p&gt;Larry Wall早已不在亲自编写所有Perl的核心代码，但是他依然会指引开发方向和作为关键的领路人和决策者。当前主要是围绕Perl5的版本进行迭代，但是后来一些人发起了Perl6的开发，想要完全替代Perl5，但是由于进展一度比较慢，而Perl5却是不断的更新从，导致现在Perl5和Perl6的差别比较大，完全是独立的两个方向发展了。Larry Wall已经批准Perl6命名为Raku。&lt;/p&gt;
 </description>
         <pubDate>Fri, 18 Oct 2019 20:00:00 +0800</pubDate>
-        <link>https://huangxuan.me/2019/10/18/perl%E7%AE%80%E4%BB%8B/</link>
-        <guid isPermaLink="true">https://huangxuan.me/2019/10/18/perl%E7%AE%80%E4%BB%8B/</guid>
+        <link>http://localhost:4000/2019/10/18/perl%E7%AE%80%E4%BB%8B/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/10/18/perl%E7%AE%80%E4%BB%8B/</guid>
         
         <category>Perl</category>
         
@@ -128,8 +129,8 @@
 
 </description>
         <pubDate>Thu, 29 Jan 2015 20:00:00 +0800</pubDate>
-        <link>https://huangxuan.me/2015/01/29/hello-2015/</link>
-        <guid isPermaLink="true">https://huangxuan.me/2015/01/29/hello-2015/</guid>
+        <link>http://localhost:4000/2015/01/29/hello-2015/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/01/29/hello-2015/</guid>
         
         <category>生活</category>
         
