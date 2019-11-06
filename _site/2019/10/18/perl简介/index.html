@@ -1,0 +1,34 @@
+<h2 id="perl简介">PERL简介</h2>
+<p>PERL是Practical Extraction and Report Language的简写，即实用摘录与报表语言，由Larry Wall在1987年发明的一种编程语言，主要用来进行文本处理。对于Perl来说，最重要的就是正则表达式以及强大的第三方库CPAN了。</p>
+<h2 id="perl之父">PERL之父</h2>
+<p><img src="https://jingwen-blog.oss-cn-beijing.aliyuncs.com/Larry%20Wall.jpg?Expires=1572765995&amp;OSSAccessKeyId=TMP.hg9vPu1T9PRjcBso3cdhYr9tBwyQahmnv99kYcT4bipakfy7r714sXRSK11nQmCZRDRFqTKM9wJdMpVPsw8yQfCAgd3LbiNZepmx8xXDjHzWjycS8cwVbNtRUN4hMT.tmp&amp;Signature=QJYZHYftpuuuiX7PnMXW9mD79s4%3D" alt="Larry Wall" title="Larry Wall" /> Larry Wall(拉里·沃尔)，1954年9月27日出生在美国加州洛杉矶，是程序员，系统管理者，语言学家和作家，更是一个相当幽默的人。Larry认为好的程序员最重要的三个美德就是“懒惰，急躁，傲慢”。哈哈，也正是或许他真的太符合这个三个特点了，所以导致层级遇到一个棘手的问题，在当年用awk和shell都不能很好的解决，所以开创了Perl创作之路。“洋葱的状态”是 Larry Wall 的年度演讲的主题，洋葱也是 Perl 基金会的标志。</p>
+<h2 id="perl解释器">perl解释器</h2>
+<p>Perl是一种解释的脚本语言，相比于Perl的p是小写的perl则是Perl程序的解释器。基于mac系统在命令行直接用命令</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="n">perl</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">perl</span> <span class="mi">5</span><span class="p">,</span> <span class="n">version</span> <span class="mi">18</span><span class="p">,</span> <span class="n">subversion</span> <span class="mi">2</span> <span class="p">(</span><span class="n">v5</span><span class="mf">.18.2</span><span class="p">)</span> <span class="n">built</span> <span class="k">for</span> <span class="n">darwin</span><span class="o">-</span><span class="n">thread</span><span class="o">-</span><span class="n">multi</span><span class="o">-</span><span class="mi">2</span><span class="n">level</span>
+<span class="p">(</span><span class="k">with</span> <span class="mi">2</span> <span class="n">registered</span> <span class="n">patches</span><span class="p">,</span> <span class="n">see</span> <span class="n">perl</span> <span class="o">-</span><span class="n">V</span> <span class="k">for</span> <span class="n">more</span> <span class="n">detail</span><span class="p">)</span>
+
+<span class="n">Copyright</span> <span class="mi">1987</span><span class="o">-</span><span class="mi">2013</span><span class="p">,</span> <span class="n">Larry</span> <span class="n">Wall</span>
+
+<span class="n">Perl</span> <span class="n">may</span> <span class="n">be</span> <span class="n">copied</span> <span class="n">only</span> <span class="n">under</span> <span class="n">the</span> <span class="n">terms</span> <span class="n">of</span> <span class="n">either</span> <span class="n">the</span> <span class="n">Artistic</span> <span class="n">License</span> <span class="ow">or</span> <span class="n">the</span>
+<span class="n">GNU</span> <span class="n">General</span> <span class="n">Public</span> <span class="n">License</span><span class="p">,</span> <span class="n">which</span> <span class="n">may</span> <span class="n">be</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Perl</span> <span class="mi">5</span> <span class="n">source</span> <span class="n">kit</span><span class="o">.</span>
+
+<span class="n">Complete</span> <span class="n">documentation</span> <span class="k">for</span> <span class="n">Perl</span><span class="p">,</span> <span class="n">including</span> <span class="n">FAQ</span> <span class="n">lists</span><span class="p">,</span> <span class="n">should</span> <span class="n">be</span> <span class="n">found</span> <span class="n">on</span>
+<span class="n">this</span> <span class="n">system</span> <span class="n">using</span> <span class="s">"man perl"</span> <span class="ow">or</span> <span class="s">"perldoc perl"</span><span class="o">.</span>  <span class="n">If</span> <span class="n">you</span> <span class="n">have</span> <span class="n">access</span> <span class="n">to</span> <span class="n">the</span>
+<span class="n">Internet</span><span class="p">,</span> <span class="n">point</span> <span class="n">your</span> <span class="n">browser</span> <span class="n">at</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">perl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="p">,</span> <span class="n">the</span> <span class="n">Perl</span> <span class="n">Home</span> <span class="n">Page</span><span class="o">.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>从上面的信息来看，当前系统主要搭载的是Perl5系列的5.18版本，通常编写perl脚本语言，都可以采用visual studio或者emacs进行编写，然后通过perl来执行即可</p>
+<h2 id="perl发展">Perl发展</h2>
+<p>Larry Wall早已不在亲自编写所有Perl的核心代码，但是他依然会指引开发方向和作为关键的领路人和决策者。当前主要是围绕Perl5的版本进行迭代，但是后来一些人发起了Perl6的开发，想要完全替代Perl5，但是由于进展一度比较慢，而Perl5却是不断的更新从，导致现在Perl5和Perl6的差别比较大，完全是独立的两个方向发展了。Larry Wall已经批准Perl6命名为Raku。</p>
