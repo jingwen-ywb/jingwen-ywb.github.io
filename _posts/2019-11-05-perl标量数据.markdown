@@ -1,5 +1,47 @@
-##  标量
-标量是Perl里面最简单的一种数据类型，对大部分的标量来说，它要么是数据比如(100或是3.75e20)，要么是由字符串组成的序列。对于Perl来说，字符串和数据在大多数情况下是可以内部转换的，你可以用操作符对标量进行操作，产生的结果通常也是一个标量。标量可以存储在标量的变量里面。
+##  列表和数组
+同其它语言一样，列表(list)和数组(array)中的每个元数都有相应的整数作为索引，次数字从0开始递增，每次加1，所以数组和列表的头一个元数总是第0个元数。
+## 数组
+* 数组初始化
+    \$rocks[0] = "bedrock" ; 
+    \$rocks[1] = 'slate' ;   
+    \$rocks[2] = 'lava'  ;    
+    \$rocks[3] = 'crushed rock' ;  
+    \$rocks[99] = 'shcist' ;   #现有95个undef元素
+    
+    * 数组的长度是没有限制的，对索引值超过数组尾端的元数进行赋值，数组将会自动根据需要扩大，在扩展过程中，需要创建增补的元数，那么他们的默认值为undef。
+    * 数组最后一个元数的索引值 \$end = \$#rocks,**用法比较常见**
+    * 数组的长度 \$number_of_rocks = \$end +1 
+    * 最后的元数的值 \$rocks[\$#rocks]
+    * 负数索引值  
+        * 最后一个元数，索引值为-1
+
+## 列表
+由圆括号内用逗号隔开的一串数据表示，而这些数据就称为列表元数。
+(1,2,3)  #包含1，2，3这三个数字的列表
+(1,2,3,) #包含1，2，3这三个数字的列表,末尾的逗号会被忽略
+(1..100) #100个整数构成的列表，**...**范围操作符，该操作符会从左边的数字计数到右边，每次加1，以产生一串联的数字
+(0..\$#rocks)，列表rocks中所有的索引
+* 赋值
+    @(at),全部的，所有的
+    @rocks = ();  #空列表
+    @giant = 1..1e5  #包含100 000个元数的列表
+    @stuff = (@giant,undef，@giant) #包含200 001个元数的列表
+* qw
+  qw表示"quoted word"加上引号的单词，就是比如 @rckis = qw(fred barney betty wilma dino) 会变成@rckis = ('fred','barney','betty','wilma','dino') 
+* pop和push
+    在Perl中通常把数组当做堆栈(stack)来使用，数组中最右侧的便是最后一个元数，也就是拥有最大索引值的那个元数。
+    * pop负责取出数组中最后一个元数并将其作为返回值返回
+        * @array = 5..9 ;
+        * \$fred = pop(@array);  #fred变成9，@array现在是(5，6，7，8)
+        * \$barney = pop(@array);#barney变成8，@array现在是(5,6,7)
+        * pop @array ;  #@array现在是(5,6),7被无情的抛弃掉了
+    * push负责添加一个元数到数组的末端
+        * push(@array,0); #@array现在是(5,6,0)
+        * push @array,8 ; #@array现在是(5,6,8,0)
+    * **push和pop操作都可以去掉括号的**
+* shift和unshift
+    * push和pop的操作是对数组的尾端，similarity，shift和unshift是数组开头进行相应的处理  
+
 * 数字
     * 整数直接量
         * 0,2001,-40，61323228440128223 这些都是整数，但是你会发现Perl有一个很牛逼的地方就是可以用下划线61_323_228_440_128_223和61323228440128223表示同一个数字，只是写法不同。
@@ -18,7 +60,7 @@
     * 双引号字符串直接量
         * 双引号内的字符串直接量(double-quoted string literal)指的是一对双引号("")圈起来的一串字符，不过双引号中的反斜线更为强大，可以转义许多控制字符，或是用八进制或十六进制写法来表示任何字符。**对Perl来说单引号和双引号表示的字符串是相同的，一般来说要想通过反斜线来转义表示换行符\n这样的特殊字符的话，就用该双引号书写直接量**
         * 双引号反斜线转义
-        !["反斜线转义"](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%8F%8D%E6%96%9C%E7%BA%BF%E8%BD%AC%E4%B9%89.png?Expires=1573145307&OSSAccessKeyId=TMP.hgBNFVHypnPMZkFKD26wbQLqkfLZMcBJ26GwnS72vRdvm5sdDnmkRmQa8tXsmxLmGtoem2wdZKNX5va6M5QovnJ1R3Z56H6aeEiwR1RGVza5TsAj3MwtKmWrDuMpg1.tmp&Signature=32NCfVt0l8LWvl6WK6ay%2B66FFKg%3D)
+        !["反斜线转义"](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%8F%8D%E6%96%9C%E7%BA%BF%E8%BD%AC%E4%B9%89.png)
 
 ##标量变量
 所谓变量(variable)，就是存储一个值或多个值的容器的名称，而标量变量就是单单存储一个值的变量。标量变量存储的是单个标量值。标量变量的名称以美元符号开头，这个符号也成为魔符(sigil)，然后标识符由一个字符或下划线开头，后接多个字母，数据或下划线。**标识符是区分大小写**。
@@ -31,7 +73,7 @@
 对标量最常见的操作就是赋值(assignment)，也就是将某个值存进变量中，Perl的赋值操作为等号。$fred = 17; 还可以使用双目赋值赋值操作
 
 ## 比较操作符
-!["Perl比较操作符"](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/Perl%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6.png?Expires=1573146374&OSSAccessKeyId=TMP.hgBNFVHypnPMZkFKD26wbQLqkfLZMcBJ26GwnS72vRdvm5sdDnmkRmQa8tXsmxLmGtoem2wdZKNX5va6M5QovnJ1R3Z56H6aeEiwR1RGVza5TsAj3MwtKmWrDuMpg1.tmp&Signature=m2dL7vOCJJ21o0z8uelt2V%2FZKdM%3D)
+!["Perl比较操作符"](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/Perl%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6.png)
     
 ## 布尔值
 Perl并没有专用的"布尔(Boolean)"数据类型，它是靠一些简单的规则来判断的
@@ -41,4 +83,4 @@ Perl并没有专用的"布尔(Boolean)"数据类型，它是靠一些简单的�
 
 ## 用户输入
 就是Perl程序从键盘读取用户的标准输入的值，最简单的方式就是使用"行输入"操作符**<STDIN>**
-$line = <STDIN> ;
+$line = STDIN;

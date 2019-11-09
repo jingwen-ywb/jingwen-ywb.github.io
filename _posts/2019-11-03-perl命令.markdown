@@ -20,7 +20,7 @@ tags:
 我们经常开发Perl脚本代码的时候，文件最顶部经常会发现use xxx或者 require "xxx.pm"，这表示该文件需要加载和引用Perl的xxx module
 use语句则是告诉Perl在@INC路径寻找xxx.pm并包含到解析的源文件拷贝中。use语句是使用类必须的。
 use和require的区别 
-![use和require的区别](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-05%20%E4%B8%8B%E5%8D%887.13.43.png?Expires=1573098991&OSSAccessKeyId=TMP.hebHLrpAMDr1si2ej4K9BiHZYu1gWyZLvnqCqTqnBGeVG2JpZVUQ2AaqSQzGNT2YfqgB9ANBNqjAukaucpJMYieXknazZyCWhA2vqvcVAW8sbbSm9q78iLijBQSp6i.tmp&Signature=uelou4x1WnRA2SttAObc%2BOVwJW4%3D " use和require的区别")
+![use和require的区别](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-05%20%E4%B8%8B%E5%8D%887.13.43.png "use和require的区别")
 ## use strict
 程序员编写代码，运行时候排查错误是是很常见的事情，尤其是写Perl这样的脚本语言，在文件的开头加上
 ```python
