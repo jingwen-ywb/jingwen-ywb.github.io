@@ -1,0 +1,43 @@
+##  列表和数组
+同其它语言一样，列表(list)和数组(array)中的每个元数都有相应的整数作为索引，次数字从0开始递增，每次加1，所以数组和列表的头一个元数总是第0个元数。
+## 数组
+* 数组初始化
+    \$rocks[0] = "bedrock" ; 
+    \$rocks[1] = 'slate' ;   
+    \$rocks[2] = 'lava'  ;    
+    \$rocks[3] = 'crushed rock' ;  
+    \$rocks[99] = 'shcist' ;   #现有95个undef元素
+    
+    * 数组的长度是没有限制的，对索引值超过数组尾端的元数进行赋值，数组将会自动根据需要扩大，在扩展过程中，需要创建增补的元数，那么他们的默认值为undef。
+    * 数组最后一个元数的索引值 \$end = \$#rocks,**用法比较常见**
+    * 数组的长度 \$number_of_rocks = \$end +1 
+    * 最后的元数的值 \$rocks[\$#rocks]
+    * 负数索引值  
+        * 最后一个元数，索引值为-1
+
+## 列表
+由圆括号内用逗号隔开的一串数据表示，而这些数据就称为列表元数。
+(1,2,3)  #包含1，2，3这三个数字的列表
+(1,2,3,) #包含1，2，3这三个数字的列表,末尾的逗号会被忽略
+(1..100) #100个整数构成的列表，**...**范围操作符，该操作符会从左边的数字计数到右边，每次加1，以产生一串联的数字
+(0..\$#rocks)，列表rocks中所有的索引
+* 赋值
+    @(at),全部的，所有的
+    @rocks = ();  #空列表
+    @giant = 1..1e5  #包含100 000个元数的列表
+    @stuff = (@giant,undef，@giant) #包含200 001个元数的列表
+* qw
+  qw表示"quoted word"加上引号的单词，就是比如 @rckis = qw(fred barney betty wilma dino) 会变成@rckis = ('fred','barney','betty','wilma','dino') 
+* pop和push
+    在Perl中通常把数组当做堆栈(stack)来使用，数组中最右侧的便是最后一个元数，也就是拥有最大索引值的那个元数。
+    * pop负责取出数组中最后一个元数并将其作为返回值返回
+        * @array = 5..9 ;
+        * \$fred = pop(@array);  #fred变成9，@array现在是(5，6，7，8)
+        * \$barney = pop(@array);#barney变成8，@array现在是(5,6,7)
+        * pop @array ;  #@array现在是(5,6),7被无情的抛弃掉了
+    * push负责添加一个元数到数组的末端
+        * push(@array,0); #@array现在是(5,6,0)
+        * push @array,8 ; #@array现在是(5,6,8,0)
+    * **push和pop操作都可以去掉括号的**
+* shift和unshift
+    * push和pop的操作是对数组的尾端，similarity，shift和unshift是数组开头进行相应的处理  
