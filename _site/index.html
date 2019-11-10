@@ -16,8 +16,8 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="我干了什么 究竟拿了时间换了什么">
     
-    <meta property="og:image" content="http://localhost:4000/img/jingwen.jpg">
-    <meta property="og:url" content="http://localhost:4000/">
+    <meta property="og:image" content="https://huangxuan.me/img/jingwen.jpg">
+    <meta property="og:url" content="https://huangxuan.me/">
     <meta property="og:site_name" content="景闻的博客 | Jingwen Blog">
     
     <title>景闻的博客 | Jingwen Blog</title>
@@ -29,7 +29,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="canonical" href="https://huangxuan.me/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -209,33 +209,28 @@
             ">
     			
 <div class="post-preview">
-    <a href="/2019/11/06/perl%E5%88%97%E8%A1%A8%E4%B8%8E%E6%95%B0%E7%BB%84/">
+    <a href="/2019/11/07/perl%E5%88%97%E8%A1%A8%E4%B8%8E%E6%95%B0%E7%BB%84/">
         <h2 class="post-title">
             Perl列表与数组
         </h2>
         
         <div class="post-content-preview">
             
-                python之父
-Guido van Rossum(吉多·范罗苏姆)，人生苦短，我用python.
+                列表和数组
+同其它语言一样，列表(list)和数组(array)中的每个元数都有相应的整数作为索引，次数字从0开始递增，每次加1，所以数组和列表的头一个元数总是第0个元数。
+数组
 
-
-
-吉多大事记
-
-  1956
-    
-      1956年1月31出生于荷兰。
-    
   
-  1982
-    
-      获得阿姆斯特丹大学的数学和计算机科学的硕士学位，并于同年加入一个多媒体组织CWI(Centrum voor Wiskunde en Informatica...
+    数组初始化
+  $rocks[0] = “bedrock” ; 
+  $rocks[1] = ‘slate’ ; 
+  $rocks[2] = ‘lava’  ;  
+  $rocks[3] = ‘...
             
         </div>
     </a>
     <p class="post-meta">
-        Posted by Jingwen Blog on November 6, 2019
+        Posted by Jingwen Blog on November 7, 2019
     </p>
 </div>
 <hr>
@@ -248,16 +243,14 @@ Guido van Rossum(吉多·范罗苏姆)，人生苦短，我用python.
         
         <div class="post-content-preview">
             
-                
+                标量
+标量是Perl里面最简单的一种数据类型，对大部分的标量来说，它要么是数据比如(100或是3.75e20)，要么是由字符串组成的序列。对于Perl来说，字符串和数据在大多数情况下是可以内部转换的，你可以用操作符对标量进行操作，产生的结果通常也是一个标量。标量可以存储在标量的变量里面。
+
   数字
     
       整数直接量
         
-          0,2001,-40，61323228440128223 这些都是整数，但是你会发现Perl有一个很牛逼的地方就是可以用下划线61_323_228_440_128_223和61323228440128223表示同一个数字，只是写法不同。
-        
-      
-      浮点数直接量
-       ...
+          0,2001,-40...
             
         </div>
     </a>

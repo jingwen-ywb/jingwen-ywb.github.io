@@ -3,60 +3,93 @@
   <channel>
     <title>Jingwen Blog</title>
     <description>关于程序与设计、黑客与画家，Web &amp; Mobile Lover，Software Engineer，UX Designer | 这里是 景闻 的个人博客，与你一起发现更大的世界。</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 10 Nov 2019 00:59:02 +0800</pubDate>
-    <lastBuildDate>Sun, 10 Nov 2019 00:59:02 +0800</lastBuildDate>
+    <link>https://huangxuan.me/</link>
+    <atom:link href="https://huangxuan.me/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 10 Nov 2019 01:21:11 +0800</pubDate>
+    <lastBuildDate>Sun, 10 Nov 2019 01:21:11 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
         <title>Perl列表与数组</title>
-        <description>&lt;h2 id=&quot;python之父&quot;&gt;python之父&lt;/h2&gt;
-&lt;p&gt;Guido van Rossum(吉多·范罗苏姆)，人生苦短，我用python.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://file.az009.com/wp-content/uploads/2018/04/15220629480345f771388e9.jpg&quot; alt=&quot;Guido van Rossum&quot; title=&quot;Guido van Rossum&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;吉多大事记&quot;&gt;吉多大事记&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;列表和数组&quot;&gt;列表和数组&lt;/h2&gt;
+&lt;p&gt;同其它语言一样，列表(list)和数组(array)中的每个元数都有相应的整数作为索引，次数字从0开始递增，每次加1，所以数组和列表的头一个元数总是第0个元数。&lt;/p&gt;
+&lt;h2 id=&quot;数组&quot;&gt;数组&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;1956&lt;/strong&gt;
+  &lt;li&gt;
+    &lt;p&gt;数组初始化
+  $rocks[0] = “bedrock” ; 
+  $rocks[1] = ‘slate’ ; &lt;br /&gt;
+  $rocks[2] = ‘lava’  ;  &lt;br /&gt;
+  $rocks[3] = ‘crushed rock’ ;&lt;br /&gt;
+  $rocks[99] = ‘shcist’ ;   #现有95个undef元素&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;1956年1月31出生于荷兰。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;1982&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;获得阿姆斯特丹大学的数学和计算机科学的硕士学位，并于同年加入一个多媒体组织CWI(Centrum voor Wiskunde en Informatica，国家数学和计算机科学研究院），做调研员。Guido也算得上是一个数据家，但是他更喜欢做计算机相关的工作，并且热衷于做任何和编程相关的活儿。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;1989&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Gudio接触过很多编程语言，比如pascal，C，Fortran。在当时的80年代，个人电脑的配置相当的低，一个稍微大的数组就能占满内存，程序员恨不得用手榨取计算机每一寸的能力。很多人认为C语言的point是在浪费内存，至于动态类型，内存自动管理，面向对象想都不敢想，只会让你的电脑陷入瘫痪。Gudio对这种编程方式很苦恼，他希望有一种语言能够像C语言那样能够全面调用计算机的功能接口，又可以像Bourne Shell快速的编程。
-  在这一年在阿姆斯特丹的圣诞节，Guido为了打发圣诞节的无趣，决心开发一个新的脚本解释程序，作为ABC的继承。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;1991&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;第一个python编译器诞生，它是用C语言写的，并能够调用C语言的文件库。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;1995&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;移居美国，并且遇到了他现在的妻子&lt;/li&gt;
+      &lt;li&gt;数组的长度是没有限制的，对索引值超过数组尾端的元数进行赋值，数组将会自动根据需要扩大，在扩展过程中，需要创建增补的元数，那么他们的默认值为undef。&lt;/li&gt;
+      &lt;li&gt;数组最后一个元数的索引值 $end = $#rocks,&lt;strong&gt;用法比较常见&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;数组的长度 $number_of_rocks = $end +1&lt;/li&gt;
+      &lt;li&gt;最后的元数的值 $rocks[$#rocks]&lt;/li&gt;
+      &lt;li&gt;负数索引值
+        &lt;ul&gt;
+          &lt;li&gt;最后一个元数，索引值为-1&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;列表&quot;&gt;列表&lt;/h2&gt;
+&lt;p&gt;由圆括号内用逗号隔开的一串数据表示，而这些数据就称为列表元数。
+(1,2,3)  #包含1，2，3这三个数字的列表
+(1,2,3,) #包含1，2，3这三个数字的列表,末尾的逗号会被忽略
+(1..100) #100个整数构成的列表，&lt;strong&gt;…&lt;/strong&gt;范围操作符，该操作符会从左边的数字计数到右边，每次加1，以产生一串联的数字
+(0..$#rocks)，列表rocks中所有的索引&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;赋值
+  @(at),全部的，所有的
+  @rocks = ();  #空列表
+  @giant = 1..1e5  #包含100 000个元数的列表
+  @stuff = (@giant,undef，@giant) #包含200 001个元数的列表&lt;/li&gt;
+  &lt;li&gt;qw
+qw表示”quoted word”加上引号的单词，就是比如 @rckis = qw(fred barney betty wilma dino) 会变成@rckis = (‘fred’,’barney’,’betty’,’wilma’,’dino’)&lt;/li&gt;
+  &lt;li&gt;pop和push
+  在Perl中通常把数组当做堆栈(stack)来使用，数组中最右侧的便是最后一个元数，也就是拥有最大索引值的那个元数。
+    &lt;ul&gt;
+      &lt;li&gt;pop负责取出数组中最后一个元数并将其作为返回值返回
+        &lt;ul&gt;
+          &lt;li&gt;@array = 5..9 ;&lt;/li&gt;
+          &lt;li&gt;$fred = pop(@array);  #fred变成9，@array现在是(5，6，7，8)&lt;/li&gt;
+          &lt;li&gt;$barney = pop(@array);#barney变成8，@array现在是(5,6,7)&lt;/li&gt;
+          &lt;li&gt;pop @array ;  #@array现在是(5,6),7被无情的抛弃掉了&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;push负责添加一个元数到数组的末端
+        &lt;ul&gt;
+          &lt;li&gt;push(@array,0); #@array现在是(5,6,0)&lt;/li&gt;
+          &lt;li&gt;push @array,8 ; #@array现在是(5,6,8,0)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;push和pop操作都可以去掉括号的&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;shift和unshift
+    &lt;ul&gt;
+      &lt;li&gt;push和pop的操作是对数组的尾端，similarity，shift和unshift是数组开头进行相应的处理&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Wed, 06 Nov 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/11/06/perl%E5%88%97%E8%A1%A8%E4%B8%8E%E6%95%B0%E7%BB%84/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/11/06/perl%E5%88%97%E8%A1%A8%E4%B8%8E%E6%95%B0%E7%BB%84/</guid>
+        <pubDate>Thu, 07 Nov 2019 00:00:00 +0800</pubDate>
+        <link>https://huangxuan.me/2019/11/07/perl%E5%88%97%E8%A1%A8%E4%B8%8E%E6%95%B0%E7%BB%84/</link>
+        <guid isPermaLink="true">https://huangxuan.me/2019/11/07/perl%E5%88%97%E8%A1%A8%E4%B8%8E%E6%95%B0%E7%BB%84/</guid>
         
         
       </item>
     
       <item>
         <title>Perl标量数据</title>
-        <description>&lt;ul&gt;
+        <description>&lt;h2 id=&quot;标量&quot;&gt;标量&lt;/h2&gt;
+&lt;p&gt;标量是Perl里面最简单的一种数据类型，对大部分的标量来说，它要么是数据比如(100或是3.75e20)，要么是由字符串组成的序列。对于Perl来说，字符串和数据在大多数情况下是可以内部转换的，你可以用操作符对标量进行操作，产生的结果通常也是一个标量。标量可以存储在标量的变量里面。&lt;/p&gt;
+&lt;ul&gt;
   &lt;li&gt;数字
     &lt;ul&gt;
       &lt;li&gt;整数直接量
@@ -80,14 +113,13 @@
     &lt;ul&gt;
       &lt;li&gt;数据运算操作符相比较于其他语言一样，最基本的四则运算 加减乘除
         &lt;ul&gt;
-          &lt;li&gt;2+3 ，5.1-2.4，3*12，14/2，10%3(取模)，&lt;/li&gt;
+          &lt;li&gt;2+3 ，5.1-2.4，3*12，14/2，10%3(取模)&lt;/li&gt;
           &lt;li&gt;2**3(乘幂操作)，2的3次方&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;字符串
-  字符串通常是由可输出的字母，数字及标点符号组成，其范围介于ASCII编码的32到126之间
+  &lt;li&gt;字符串 字符串通常是由可输出的字母，数字及标点符号组成，其范围介于ASCII编码的32到126之间
     &lt;ul&gt;
       &lt;li&gt;单引号字符串直接量
         &lt;ul&gt;
@@ -98,15 +130,15 @@
         &lt;ul&gt;
           &lt;li&gt;双引号内的字符串直接量(double-quoted string literal)指的是一对双引号(““)圈起来的一串字符，不过双引号中的反斜线更为强大，可以转义许多控制字符，或是用八进制或十六进制写法来表示任何字符。&lt;strong&gt;对Perl来说单引号和双引号表示的字符串是相同的，一般来说要想通过反斜线来转义表示换行符\n这样的特殊字符的话，就用该双引号书写直接量&lt;/strong&gt;&lt;/li&gt;
           &lt;li&gt;双引号反斜线转义
-  &lt;img src=&quot;https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%8F%8D%E6%96%9C%E7%BA%BF%E8%BD%AC%E4%B9%89.png&quot; alt=&quot;&amp;quot;反斜线转义&amp;quot;&quot; /&gt;&lt;/li&gt;
+   &lt;img src=&quot;https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%8F%8D%E6%96%9C%E7%BA%BF%E8%BD%AC%E4%B9%89.png&quot; alt=&quot;&amp;quot;双引号反斜线转义&amp;quot;&quot; /&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;##标量变量
-所谓变量(variable)，就是存储一个值或多个值的容器的名称，而标量变量就是单单存储一个值的变量。标量变量存储的是单个标量值。标量变量的名称以美元符号开头，这个符号也成为魔符(sigil)，然后标识符由一个字符或下划线开头，后接多个字母，数据或下划线。&lt;strong&gt;标识符是区分大小写&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;标量变量&quot;&gt;标量变量&lt;/h2&gt;
+&lt;p&gt;所谓变量(variable)，就是存储一个值或多个值的容器的名称，而标量变量就是单单存储一个值的变量。标量变量存储的是单个标量值。标量变量的名称以美元符号开头，这个符号也成为魔符(sigil)，然后标识符由一个字符或下划线开头，后接多个字母，数据或下划线。&lt;strong&gt;标识符是区分大小写。&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;注意
     &lt;ul&gt;
@@ -117,11 +149,11 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;##标量赋值
-对标量最常见的操作就是赋值(assignment)，也就是将某个值存进变量中，Perl的赋值操作为等号。$fred = 17; 还可以使用双目赋值赋值操作&lt;/p&gt;
+&lt;h2 id=&quot;标量赋值&quot;&gt;标量赋值&lt;/h2&gt;
+&lt;p&gt;对标量最常见的操作就是赋值(assignment)，也就是将某个值存进变量中，Perl的赋值操作为等号。$fred = 17; 还可以使用双目赋值赋值操作&lt;/p&gt;
 
 &lt;h2 id=&quot;比较操作符&quot;&gt;比较操作符&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://jingwen-blog.oss-cn-beijing.aliyuncs.com/Perl%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6.png&quot; alt=&quot;&amp;quot;Perl比较操作符&amp;quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jingwen-blog.oss-cn-beijing.aliyuncs.com/Perl%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6.png&quot; alt=&quot;&amp;quot;比较操作符&amp;quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;布尔值&quot;&gt;布尔值&lt;/h2&gt;
 &lt;p&gt;Perl并没有专用的”布尔(Boolean)”数据类型，它是靠一些简单的规则来判断的&lt;/p&gt;
@@ -132,12 +164,13 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;用户输入&quot;&gt;用户输入&lt;/h2&gt;
-&lt;p&gt;就是Perl程序从键盘读取用户的标准输入的值，最简单的方式就是使用”行输入”操作符**&lt;STDIN&gt;**
-$line = STDIN;&lt;/STDIN&gt;&lt;/p&gt;
+&lt;p&gt;就是Perl程序从键盘读取用户的标准输入的值，最简单的方式就是使用”行输入”操作符&lt;strong&gt;STDIN&lt;/strong&gt; 
+Perl代码写法就是 $line = &amp;lt;STDIN&amp;gt;;&lt;/p&gt;
+
 </description>
         <pubDate>Tue, 05 Nov 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/11/05/perl%E6%A0%87%E9%87%8F%E6%95%B0%E6%8D%AE/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/11/05/perl%E6%A0%87%E9%87%8F%E6%95%B0%E6%8D%AE/</guid>
+        <link>https://huangxuan.me/2019/11/05/perl%E6%A0%87%E9%87%8F%E6%95%B0%E6%8D%AE/</link>
+        <guid isPermaLink="true">https://huangxuan.me/2019/11/05/perl%E6%A0%87%E9%87%8F%E6%95%B0%E6%8D%AE/</guid>
         
         
       </item>
@@ -167,8 +200,8 @@ use和require的区别
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 03 Nov 2019 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/11/03/perl%E5%91%BD%E4%BB%A4/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/11/03/perl%E5%91%BD%E4%BB%A4/</guid>
+        <link>https://huangxuan.me/2019/11/03/perl%E5%91%BD%E4%BB%A4/</link>
+        <guid isPermaLink="true">https://huangxuan.me/2019/11/03/perl%E5%91%BD%E4%BB%A4/</guid>
         
         <category>Perl</category>
         
@@ -216,8 +249,8 @@ Larry Wall(拉里·沃尔)，1954年9月27日出生在美国加州洛杉矶，�
 &lt;p&gt;Larry Wall早已不在亲自编写所有Perl的核心代码，但是他依然会指引开发方向和作为关键的领路人和决策者。当前主要是围绕Perl5的版本进行迭代，但是后来一些人发起了Perl6的开发，想要完全替代Perl5，但是由于进展一度比较慢，而Perl5却是不断的更新从，导致现在Perl5和Perl6的差别比较大，完全是独立的两个方向发展了。Larry Wall已经批准Perl6命名为Raku。&lt;/p&gt;
 </description>
         <pubDate>Fri, 18 Oct 2019 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/10/18/perl%E7%AE%80%E4%BB%8B/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/10/18/perl%E7%AE%80%E4%BB%8B/</guid>
+        <link>https://huangxuan.me/2019/10/18/perl%E7%AE%80%E4%BB%8B/</link>
+        <guid isPermaLink="true">https://huangxuan.me/2019/10/18/perl%E7%AE%80%E4%BB%8B/</guid>
         
         <category>Perl</category>
         
@@ -297,8 +330,8 @@ Larry Wall(拉里·沃尔)，1954年9月27日出生在美国加州洛杉矶，�
 
 </description>
         <pubDate>Thu, 29 Jan 2015 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2015/01/29/hello-2015/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/01/29/hello-2015/</guid>
+        <link>https://huangxuan.me/2015/01/29/hello-2015/</link>
+        <guid isPermaLink="true">https://huangxuan.me/2015/01/29/hello-2015/</guid>
         
         <category>生活</category>
         

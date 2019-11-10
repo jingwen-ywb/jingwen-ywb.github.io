@@ -40,4 +40,4 @@
         * push @array,8 ; #@array现在是(5,6,8,0)
     * **push和pop操作都可以去掉括号的**
 * shift和unshift
-    * push和pop的操作是对数组的尾端，similarity，shift和unshift是数组开头进行相应的处理  
+    * push和pop的操作是对数组的尾端，similarity，shift(从数组头部取一个元数出来)和unshift(从头部增加一个元素和)是数组开头进行相应的处理，  
