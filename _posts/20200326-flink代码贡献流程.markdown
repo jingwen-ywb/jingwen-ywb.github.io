@@ -1,14 +1,4 @@
----
-layout:     post
-title:      "apache flink contributor "
-subtitle:   " \"apache flink开源项目贡献流程\""
-date:       2020-03-26 19:57:00
-author:     "jingwen"
-catalog: true
-tags:
-    - flink
-    - contributor
----
+
 如何一步一步的参与apache开源项目的贡献，本文内容前提是有JIRA和github的账号
 
 ## 创建JIRA
