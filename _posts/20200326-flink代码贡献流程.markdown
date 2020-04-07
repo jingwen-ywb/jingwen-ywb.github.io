@@ -1,0 +1,91 @@
+---
+layout:     post
+title:      "apache flink contributor "
+subtitle:   " \"apache flink开源项目贡献流程\""
+date:       2020-03-26 19:57:00
+author:     "jingwen"
+catalog: true
+tags:
+    - flink
+    - contributor
+---
+如何一步一步的参与apache开源项目的贡献，本文内容前提是有JIRA和github的账号
+
+## 创建JIRA
+我们常见的开源项目都是通过JIRA来管理各类的bug以及feature的相关问题，首选我们自己可以去创建一个jira问题。https://issues.apache.org/jira/projects/FLINK/issues/FLINK-16805?filter=allopenissues
+### 创建JIRA
+!["CREATE"](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E6%88%AA%E5%B1%8F2020-03-26%E4%B8%8B%E5%8D%888.06.45.png)
+
+### JIRA内容填写（所有的内容一定要english去填写）
+!["JIRA表单"](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/jira%E8%A1%A8%E5%8D%95.png)
+* Project：选择你需要创建JIRA内容的项目，我这里会选择flink(FLINK)
+* Issue Type:常见的为Bug(明显的代码问题)或者New Feature（一些新的特性）或者Improvment（doc等等拼写错误类的）
+* Summary：给你提这个JIRA的内容的一个总结
+* Priority：根据紧急情况来设定，Major或者Critical
+* Component/s：根据你完善提交的内容来选择就好了
+* Affects Version/s：当前你完善的内容影响的版本，可以不填写，你提交了PR之后，一般commiter会处理的。
+* Fix Version/s：修复的版本
+* Description:这里需要写清楚你完善的内容，产生的现象和描述，就是需要更清晰的描述出来，你完善的内容，让别人很容易懂
+
+### assign
+创建完了JIRA之后，需要在jira下回复，表达想take这个issue，让committer帮忙assign这个issue给你，内容大致为：I want to take this issue，someone can assign it to me？
+!["JIRA表单"](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/take%20issue.png)
+
+## 创建PR(pull request)
+
+### fork flink
+你首先需要fork开源的项目到你的github的repo，以后的每一次提交都在这个repo进行。
+!["JIRA表单"](https://jingwen-blog.oss-cn-beijing.aliyuncs.com/flink.png)
+
+### 保持同步开源项目
+将你fork的项目git@github.com:jingwen-ywb/flink.git而不是git@github.com:apache/flink.git这个项目clone到你的本地，路径一定不要搞错了。
+```
+    git clone git@github.com:jingwen-ywb/flink.git
+```
+默认的clone操作完成后，远端仓库的地址别名为：origin，为了需要与原项目保持更新，你还需要将原项目地址给添加进来，保持同步，以获取最新的代码。使用命令:
+```
+    git remote add upstream https://github.com/apache/flink.git
+```
+然后拉取最新的分支和代码
+```
+    git fetch upstream
+```
+切换到主分支master
+```
+    git checkout master
+```
+把upstream/master分支合并到本地master上
+```
+    git merge upstream/master
+```
+将upstream/master分支更新的内容更新到github的fork上，就直接
+```
+    git push origin master
+```
+### 提交本地代码至github的fork上
+在本地需要创建一个分支，用于这次代码的修改
+```
+    git checkout -b jingwen-20200326-echo 
+```
+在本地的项目中完成了代码的修改之后，就需要将内容提交到fork上。**切记commit的注释一定要用英文**
+```
+    git add .
+    git commit . -m "[FLINK-16790][python][doc] enables the interpretation of backslash escapes"
+    git push origin jingwen-20200326-echo
+```
+git的注释内容比较有讲究：[FLINK-16790]是JIRA的编号，[python]是修改的python模块的pyflink，[doc]是完善的文档内容，enables the interpretation of backslash escapes是JIRA上的summary内容
+
+### 创建pull request
+创建pr的过程，你提交了你的分支代码之后，旁边就会有一个按钮pull request，直接创建就好了，pull request的标题跟你git 提交代码的commit注释内容保持一致就好，下面就是一个详细的帮助文档。
+https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
+
+创建完成pr之后，commiter会在你的github上的进行留言，一起讨论这个pr内容，你一定要打成共识。
+
+
+
+
+
+
+
+
+
