@@ -7,7 +7,7 @@ author:     "wenbing.yu"
 catalog: true
 tags:
     - 生活
-    - Meta
+    - coding
 ---
 
 > “Yeah It's on. ”
@@ -16,8 +16,6 @@ tags:
 ## 前言
 
 wenbing的 的 Blog 就这么开通了。
-
-[跳过废话，直接看技术实现 ](#build) 
 
 2012 年，强烈学习使用markdown的开始。
 
