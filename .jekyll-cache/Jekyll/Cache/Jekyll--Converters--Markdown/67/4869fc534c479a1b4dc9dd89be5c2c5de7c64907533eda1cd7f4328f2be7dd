@@ -1,0 +1,139 @@
+I"v<h2 id="kafka入门">kafka入门</h2>
+<p>kafka是由Linkedin公司开发的一个分布式(distributed)，多分区(partition)，多副本(replica)基于zookeeper协调的分布式消息系统。Linkedin在2010年贡献给了Apache基金会并成为顶级开源项目。如今Apache官方把它称作是A distributed streaming platform。主要用来构建实时数据流和流应用。</p>
+<h2 id="特点">特点</h2>
+<ul>
+  <li>发布&amp;订阅
+    <ul>
+      <li>像一个消息系统一样的进行读取和写入流式数据</li>
+    </ul>
+  </li>
+  <li>处理
+    <ul>
+      <li>编写可扩展的流处理应用处理实时处理的中的事件</li>
+    </ul>
+  </li>
+  <li>存储
+    <ul>
+      <li>在一个分布式，多副本，容错性的集群上非常安全的存储流式数据</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="设计原理">设计原理</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>* NIO
+* Zero Copy
+* 磁盘顺序读写
+* Queue数据结构
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="quickstart">Quickstart</h2>
+
+<h3 id="step-1-download-the-code">Step 1: Download the code</h3>
+<p><a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.3.0/kafka_2.12-2.3.0.tgz">Download</a> the 2.3.0 release and un-tar it.</p>
+<blockquote>
+  <p><code class="highlighter-rouge">tar -xzf kafka_2.12-2.3.0.tgz</code></p>
+</blockquote>
+
+<blockquote>
+  <p><code class="highlighter-rouge">cd kafka_2.12-2.3.0</code></p>
+</blockquote>
+
+<h3 id="step-2-start-the-server">Step 2: Start the server</h3>
+<p>kafka使用zookeeper来进行协调管理，因此首先需要启动zookeeper服务，启动单个节点的zookeeper instance</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">bin/zookeeper-server-start.sh config/zookeeper.properties</code></p>
+</blockquote>
+
+<p>再启动kafka server</p>
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-server-start.sh config/server.properties</code></p>
+</blockquote>
+
+<h3 id="step-3-create-a-topic">Step 3: Create a topic</h3>
+<p>创建一个名字为test的topic，包含一个分区和一个副本</p>
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test</code></p>
+</blockquote>
+
+<p>然后可以查看集群上的topic列表</p>
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-topics.sh --list --bootstrap-server localhost:9092</code></p>
+</blockquote>
+
+<h3 id="step-4-send-some-messages">Step 4: Send some messages</h3>
+<p>kafka通过客户端的命令行可以将一个文件的内容或者标准的输入内容发送到kafka集群，默认的每一行都会作为一个单独的消息</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test</code></p>
+</blockquote>
+
+<h3 id="step-5-start-a-consumer">Step 5: Start a consumer</h3>
+<p>kafka也能通过一个消费的命令行从集群消费消息到标准输出</p>
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning</code></p>
+</blockquote>
+
+<h3 id="step-6-setting-up-a-multi-broker-cluster">Step 6: Setting up a multi-broker cluster</h3>
+<p>扩展我们的集群节点(broker)到三个节点</p>
+<blockquote>
+  <p><code class="highlighter-rouge">cp config/server.properties config/server-1.properties</code></p>
+</blockquote>
+
+<blockquote>
+  <p><code class="highlighter-rouge">cp config/server.properties config/server-2.properties</code></p>
+</blockquote>
+
+<p>编辑三个broker配置的文件</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="n">config</span><span class="o">/</span><span class="n">server</span><span class="o">-</span><span class="mf">1.</span><span class="n">properties</span><span class="p">:</span>
+    <span class="n">broker</span><span class="o">.</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">listeners</span><span class="o">=</span><span class="n">PLAINTEXT</span><span class="p">:</span><span class="o">//</span><span class="p">:</span><span class="mi">9093</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">dirs</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">logs</span><span class="o">-</span><span class="mi">1</span>
+ 
+<span class="n">config</span><span class="o">/</span><span class="n">server</span><span class="o">-</span><span class="mf">2.</span><span class="n">properties</span><span class="p">:</span>
+    <span class="n">broker</span><span class="o">.</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span>
+    <span class="n">listeners</span><span class="o">=</span><span class="n">PLAINTEXT</span><span class="p">:</span><span class="o">//</span><span class="p">:</span><span class="mi">9094</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">dirs</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">logs</span><span class="o">-</span><span class="mi">2</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>broker.id属性是集群上每一个broker节点上的唯一值和永久的名称</p>
+
+<p>同样的也需要扩展到三个zookeeper节点</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-server-start.sh config/server-1.properties &amp;</code></p>
+</blockquote>
+
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-server-start.sh config/server-2.properties &amp;</code></p>
+</blockquote>
+
+<p>创建一个新的topic有三个副本</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 3 --partitions 1 --topic my-replicated-topic</code></p>
+</blockquote>
+
+<p>采用describe topics命令查看每一个broker上的运行情况</p>
+<blockquote>
+  <p><code class="highlighter-rouge">bin/kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic my-replicated-topic</code></p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>    <span class="n">Topic</span><span class="p">:</span><span class="n">my</span><span class="o">-</span><span class="n">replicated</span><span class="o">-</span><span class="n">topic</span>   <span class="n">PartitionCount</span><span class="p">:</span><span class="mi">1</span>    <span class="n">ReplicationFactor</span><span class="p">:</span><span class="mi">3</span> <span class="n">Configs</span><span class="p">:</span>
+    <span class="n">Topic</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">replicated</span><span class="o">-</span><span class="n">topic</span>  <span class="n">Partition</span><span class="p">:</span> <span class="mi">0</span>    <span class="n">Leader</span><span class="p">:</span> <span class="mi">1</span>   <span class="n">Replicas</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span> <span class="n">Isr</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

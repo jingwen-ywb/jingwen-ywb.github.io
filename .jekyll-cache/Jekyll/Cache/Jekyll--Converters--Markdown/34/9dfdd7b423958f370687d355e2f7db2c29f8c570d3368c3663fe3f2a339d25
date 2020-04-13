@@ -1,0 +1,5 @@
+I"�<h2 id="perl循环">Perl循环</h2>
+<p>通常情况下，在代码的语句块内容，是按照代码的顺序执行，也就是函数中的第一个语句先执行，接着是第二个语句，依次类推。编程语言提供了更为复杂的执行路径的多种控制语句，循环语句允许我们多次执行一个语句或语句组，下面是大多数编程语言中循环语句的流程图
+<img src="https://jingwen-blog.oss-cn-beijing.aliyuncs.com/loop.png" alt="&quot;循环语句流程&quot;" />
+<strong>注意，数字 0, 字符串 ‘0’ 、 “” , 空 list () , 和 undef 为 false ，其他值均为 true。 true 前面使用 ! 或 not则返回 false 。</strong></p>
+:ET

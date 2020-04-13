@@ -1,0 +1,22 @@
+I"g<h2 id="usrbinperl">#!/usr/bin/perl</h2>
+<p>在Unix系统中，如果文件开头的最前面是两个字符#!,那么后面跟着的就是用来执行这个文件的程序路径，在Perl的脚本中就是/usr/bin/perl，正式由于必须强调这样的命令，导致perl脚本程序可移植性变得比较差，因为存在每台机器上perl解释器的路径不一样。不过大多数机器下的perl解释器的路径一般在/usr/bin/perl或者/usr/local/bin/perl下。如果不确定的话就写成</p>
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>    <span class="c1">#!/usr/bin/envperl</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="use和require">use和require</h2>
+<p>我们经常开发Perl脚本代码的时候，文件最顶部经常会发现use xxx或者 require “xxx.pm”，这表示该文件需要加载和引用Perl的xxx module
+use语句则是告诉Perl在@INC路径寻找xxx.pm并包含到解析的源文件拷贝中。use语句是使用类必须的。
+use和require的区别 
+<img src="https://jingwen-blog.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-11-05%20%E4%B8%8B%E5%8D%887.13.43.png" alt="use和require的区别" title="use和require的区别" /></p>
+<h2 id="use-strict">use strict</h2>
+<p>程序员编写代码，运行时候排查错误是是很常见的事情，尤其是写Perl这样的脚本语言，在文件的开头加上</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>    <span class="n">use</span> <span class="n">strict</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>strict这个关键字的作用是强迫程序开发者使用比较严谨的Perl写法，避开一些比较容易出错的编写方式，让代码在运行出错的时候，更高效的去排查问题。脚本中加上了strict之后，在整个代码中就会有很多的限制就是在定义任何的变量之前一定需要加上关键字<strong>my</strong>。尤其是当你的程序会有很多行的时候</p>
+<h2 id="use-warnings">use warnings</h2>
+<p>warnings就意味着Perl程序开启了所有的警告信息，让程序员更容易发觉代码可能会出问题的地方。一般都是跟着strict一起使用</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>    <span class="n">use</span> <span class="n">warnings</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
